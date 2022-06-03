@@ -15,10 +15,10 @@ class TicTacToeGame {
     document.body.appendChild(gameBoard);
   }
   
-  Start(){
-    this.board =["","","",
-                 "","","",
-                 "","","",];
+  start(){
+    this.board = ["", "", "",
+                  "", "", "",
+                  "", "", ""];
     this.drawBoard();
   }
 }
