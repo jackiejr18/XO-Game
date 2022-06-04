@@ -12,10 +12,22 @@ class TicTacToeGame {
     if(this.board[moveIndex] == ""){
       this.board[moveIndex] = this.currentPlayer;
       this.currentPlayer = (this.currentPlayer == PLAYER_ONE_SYMBOL ?
-                            PLAYER_ONE_SYMBOL :
-                            PLAYER_TWO_SYMBOL);
+                            PLAYER_TWO_SYMBOL :
+                            PLAYER_ONE_SYMBOL);
+      this.updateBoard();
       console.log(this.board);
     }
+  }
+  
+  updateBoard(){
+    let gameBoard = document.getElementById('gameBoard');
+    let squareElements = gameBoard.childNodes;
+    console.log(squareElements);
+    squareElements.forEach((element,index) => {
+     if(element.innerText != this.board[index]){
+       element.innerText = this.board[index];
+     }
+    });
   }
   
   drawBoard(){
